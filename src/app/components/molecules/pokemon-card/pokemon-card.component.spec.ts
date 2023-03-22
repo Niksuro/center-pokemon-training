@@ -7,6 +7,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokeapiService } from '@services/pokeapi/pokeapi.service';
 import { of } from 'rxjs/internal/observable/of';
 import { PokemonCardComponent } from './pokemon-card.component';
@@ -26,6 +27,7 @@ describe('PokemonCardComponent', () => {
         MatDialogModule,
         MatCardModule,
         MatProgressSpinnerModule,
+        BrowserAnimationsModule,
       ],
       providers: [
         { provide: MatDialogRef, useValue: dialogMock },
@@ -61,7 +63,7 @@ describe('PokemonCardComponent', () => {
   it('should store a pokemon data after consult _pokeapiService.getPokemon', () => {
     jest.spyOn(_pokeapiService, 'getPokemon').mockReturnValue(
       of({
-        types: [{slot: 1, type:{name: 'grass'}}],
+        types: [{ slot: 1, type: { name: 'grass' } }],
         sprites: {
           front_default: 'image',
         },
@@ -77,5 +79,18 @@ describe('PokemonCardComponent', () => {
     );
     component.getPokemonData();
     expect(component.pokemonData.image).toBe('image');
+  });
+
+  it('should check if handleClickCard select the pokemon', () => {
+    component.battleMode = true;
+    component.selectedForBattle = true;
+    component.handleClickCard();
+    expect(component.selectedPokemon).toBeTruthy();
+  });
+
+  it('should check if handleClickCard open the modal', () => {
+    component.battleMode = false;
+    component.handleClickCard();
+    expect(component.selectedPokemon).toBeFalsy();
   });
 });

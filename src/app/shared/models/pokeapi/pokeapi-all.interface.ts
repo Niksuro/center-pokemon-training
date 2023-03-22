@@ -1,4 +1,8 @@
 export interface PokeapiAll {
-    name: string;
-    url: string;
+  results: pokemonData[];
+}
+
+interface pokemonData {
+  name: string;
+  url: string;
 }

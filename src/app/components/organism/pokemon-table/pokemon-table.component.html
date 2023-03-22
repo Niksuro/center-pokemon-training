@@ -1,5 +1,21 @@
-<app-header></app-header>
-<div class="table-pokemon" *ngIf="pokemonList.length > 0">
-    <app-pokemon-card *ngFor="let pokemon of pokemonList" [pokemonData]=pokemon></app-pokemon-card>    
+<app-header
+  (selectBattleMode)="handleButtonBattleMode()"
+  (selectStartBattle)="handlebuttonStartBattle()"
+  [firstPokemon]="selectedForBattleList.length > 0 ? selectedForBattleList[0].name : '---'"
+  [secondPokemon]="selectedForBattleList.length > 1 ? selectedForBattleList[1].name : '---'"
+  [selectedForBattle]="selectedForBattleList.length < 2"
+></app-header>
+<div
+  class="table-pokemon"
+  [ngStyle]="{ background: colorBackground }"
+  *ngIf="pokemonList.length > 0"
+>
+  <app-pokemon-card
+    *ngFor="let pokemon of pokemonList"
+    [pokemonData]="pokemon"
+    [battleMode]="battleMode"
+    [selectedForBattle]="selectedForBattleList.length < 2"
+    (pokemonSelectedBattle)="handlePokemonSelected($event)"
+  ></app-pokemon-card>
 </div>
 <app-footer></app-footer>

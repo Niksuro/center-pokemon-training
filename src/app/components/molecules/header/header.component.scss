@@ -1,4 +1,60 @@
 mat-toolbar {
-    z-index: 10;
-    position: fixed;
+  z-index: 10;
+  position: fixed;
+}
+.header-fight-section {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  button {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    .text-up-button {
+      font-size: 2rem;
+      margin-bottom: -1rem;
+    }
+    .text-down-button {
+      font-size: .8rem;
+      margin-bottom: -0.5rem;
+    }
+  }
+  p {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  mat-toolbar {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    span {
+      display: none;
+    }
+  }
+  .header-fight-section {
+    margin-top: .5rem;
+    button {
+      margin: 0 .4rem;
+      .text-up-button {
+        font-size: 2rem;
+        margin-top: .2rem;
+        margin-bottom: 0;
+      }
+      .text-down-button {
+       display: none;
+       margin-bottom: 0;
+      }
+    }
+    p {
+      margin: 0 .2rem;
+    }
+  }
+  .pokemon-selector{
+    margin: .5rem 0;
+    font-size: 1rem;
+  }
 }

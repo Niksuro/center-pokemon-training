@@ -1,3 +1,25 @@
 <mat-toolbar color="warn">
-    <span>Pokédex</span>
+  <span>Pokedex</span>
+  <div class="header-fight-section">
+    <p>{{ firstPokemon }}</p>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="selectedForBattle"
+      (click)="handleStartBattle()"
+      class="pokemon-fight"
+    >
+      <p class="text-up-button">- VS -</p>
+      <p class="text-down-button">Start battle!</p>
+    </button>
+    <p>{{ secondPokemon }}</p>
+  </div>
+  <button
+    mat-raised-button
+    color="warn"
+    class="pokemon-selector"
+    (click)="handleSelectBattleMode()"
+  >
+    Battle Mode
+  </button>
 </mat-toolbar>
