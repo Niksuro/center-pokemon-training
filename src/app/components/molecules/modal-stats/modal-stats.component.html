@@ -1,0 +1,46 @@
+<div class="modal">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="home"
+  ></mat-icon>
+  <h3 class="modal-title">{{ pokemonData.name }}</h3>
+  <div class="pokemon-tag-modal">
+    <app-tag-type *ngFor="let type of pokemonData.type" [text]=type></app-tag-type>
+  </div>
+  <div class="modal-card">
+    <img
+      src="{{ pokemonData.image }}"
+      alt="{{ pokemonData.name }}"
+      title="{{ pokemonData.name }}"
+    />
+    <div class="modal-text">
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <h4>HP</h4>
+          <p>{{ pokemonData.health }}</p>
+        </div>
+        <div class="modal-stat">
+          <h4>ATK</h4>
+          <p>{{ pokemonData.attack }}</p>
+        </div>
+        <div class="modal-stat">
+          <h4>DEF</h4>
+          <p>{{ pokemonData.defense }}</p>
+        </div>
+        <div class="modal-stat">
+          <h4>SP-ATK</h4>
+          <p>{{ pokemonData.specialAttack }}</p>
+        </div>
+        <div class="modal-stat">
+          <h4>SP-DEF</h4>
+          <p>{{ pokemonData.specialDefense }}</p>
+        </div>
+        <div class="modal-stat">
+          <h4>SPD</h4>
+          <p>{{ pokemonData.speed }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

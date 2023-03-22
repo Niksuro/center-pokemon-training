@@ -3,6 +3,7 @@ export interface PokeapiOne {
     sprites: {
         front_default: string;
     }
+    stats: StatsPoke[];
 }
 
 export interface TypePoke {
@@ -10,4 +11,8 @@ export interface TypePoke {
     type: {
         name: string;
     }
+}
+
+interface StatsPoke {
+    base_stat: number;
 }

@@ -1,6 +1,6 @@
 <mat-card class="pokemon-card">  
   <mat-card-header class="title-card">
-    <mat-card-title>{{ pokemonData.name }}</mat-card-title>
+    <mat-card-title (click)="openModal()">{{ pokemonData.name }}</mat-card-title>
   </mat-card-header>
   <mat-spinner *ngIf="!pokemonData.image"></mat-spinner>
   <img
@@ -10,6 +10,7 @@
     src="{{pokemonData.image}}"
     alt="{{pokemonData.name}}"
     title="{{pokemonData.name}}"
+    (click)="openModal()"
   />
   <div class="pokemon-tag-card">
     <app-tag-type *ngFor="let type of pokemonData.type" [text]=type></app-tag-type>
