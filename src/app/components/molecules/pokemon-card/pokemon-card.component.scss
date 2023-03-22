@@ -1,0 +1,22 @@
+.pokemon-card {
+    width: 8rem;
+    text-align: center;
+    text-transform: capitalize;
+    background: rgb(237,109,109);
+    background: linear-gradient(0deg, rgba(237,109,109,1) 0%, rgba(235,48,48,1) 100%);
+    box-shadow: 0 0 .5rem black;
+    border-color: white;
+    border-style: solid;
+    border-width: .2rem;
+}
+
+.pokemon-tag-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+}
+
+.title-card {
+    justify-content: center;
+    
+}

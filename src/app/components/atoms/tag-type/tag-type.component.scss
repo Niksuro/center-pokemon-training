@@ -1,0 +1,61 @@
+@import "./../../../../assets/styles/abstracts/variables/variables";
+
+p {
+  padding: 0.5rem;
+  border-radius: 15%;
+}
+
+.normal {
+  background-color: $color-normal;
+}
+.fire {
+  background-color: $color-fire;
+}
+.water {
+  background-color: $color-water;
+}
+.electric {
+  background-color: $color-electric;
+}
+.grass {
+  background-color: $color-grass;
+}
+.ice {
+  background-color: $color-ice;
+}
+.fighting {
+  background-color: $color-fighting;
+}
+.poison {
+  background-color: $color-poison;
+}
+.ground {
+  background-color: $color-ground;
+}
+.flying {
+  background-color: $color-flying;
+}
+.psychic {
+  background-color: $color-psychic;
+}
+.bug {
+  background-color: $color-bug;
+}
+.rock {
+  background-color: $color-rock;
+}
+.ghost {
+  background-color: $color-ghost;
+}
+.dragon {
+  background-color: $color-dragon;
+}
+.dark {
+  background-color: $color-dark;
+}
+.steel {
+  background-color: $color-steel;
+}
+.fairy {
+  background-color: $color-fairy;
+}

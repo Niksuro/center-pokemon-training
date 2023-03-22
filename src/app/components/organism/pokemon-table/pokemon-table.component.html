@@ -1,1 +1,3 @@
-<p>pokemon-table works!</p>
+<div class="table-pokemon" *ngIf="pokemonList.length > 0">
+    <app-pokemon-card *ngFor="let pokemon of pokemonList" [pokemonData]=pokemon></app-pokemon-card>    
+</div>
