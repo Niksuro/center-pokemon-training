@@ -1,21 +1,25 @@
 ::ng-deep mat-dialog-container {
-    background-color: white !important;
-    padding: .2rem !important;
+  background-color: white !important;
+  padding: 0.2rem !important;
 }
-.modal {    
-    background: rgb(237,109,109);
-    background: linear-gradient(0deg, rgba(235,48,48,1)  0%, rgba(237,109,109,1) 100%);
+.modal {
+  background: rgb(237, 109, 109);
+  background: linear-gradient(
+    0deg,
+    rgba(235, 48, 48, 1) 0%,
+    rgba(237, 109, 109, 1) 100%
+  );
 }
 .pokemon-tag-modal {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;   
-    
-    :nth-child(n) {
-        text-transform: capitalize;
-        font-size: 1.5rem;
-        margin: 2rem 2rem 0rem 2rem;
-    } 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  :nth-child(n) {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin: 2rem 2rem 0rem 2rem;
+  }
 }
 .modal-title {
   font-size: 5rem;
@@ -37,6 +41,11 @@
   flex-direction: column;
   flex: 1 0 20%;
   justify-content: center;
+  background-color: #07070773;
+  border-color: white;
+  border-style: solid;
+  margin: 1rem;
+  border-radius: 10%;
   h4 {
     font-size: 2rem;
     text-decoration: underline;
@@ -58,13 +67,22 @@
   text-align: center;
 }
 
-@media screen and (max-width: 767px) { 
-    .modal-title {
-        font-size: 3rem;
-      }
-    .modal-text {
-        h4 {
-          font-size: 1rem;
-        }
-      }
+@media screen and (max-width: 767px) {
+  .modal-card {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: fit-content;
+      height: 12rem;
+      align-self: center;
+    }
+  }
+  .modal-title {
+    font-size: 3rem;
+  }
+  .modal-text {
+    h4 {
+      font-size: 1rem;
+    }
+  }
 }
