@@ -9,8 +9,10 @@
     border-color: white;
     border-style: solid;
     border-width: .2rem;
-    transition: .3s;
-    cursor: pointer;
+    transition: .3s; 
+    img {
+        cursor: pointer;
+    }   
     &:hover {
         width: 9rem;
     }
@@ -24,7 +26,7 @@
 
 .title-card {
     justify-content: center;
-    
+    cursor: pointer;
 }
 
 mat-spinner {
