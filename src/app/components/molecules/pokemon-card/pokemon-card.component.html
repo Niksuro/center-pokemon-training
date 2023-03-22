@@ -1,8 +1,10 @@
-<mat-card class="pokemon-card">
+<mat-card class="pokemon-card">  
   <mat-card-header class="title-card">
     <mat-card-title>{{ pokemonData.name }}</mat-card-title>
   </mat-card-header>
+  <mat-spinner *ngIf="!pokemonData.image"></mat-spinner>
   <img
+    *ngIf="pokemonData.image"
     mat-card-image
     loading="lazy"
     src="{{pokemonData.image}}"

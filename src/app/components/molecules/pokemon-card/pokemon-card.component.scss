@@ -1,5 +1,6 @@
 .pokemon-card {
     width: 8rem;
+    min-height: 17rem;
     text-align: center;
     text-transform: capitalize;
     background: rgb(237,109,109);
@@ -19,4 +20,8 @@
 .title-card {
     justify-content: center;
     
+}
+
+mat-spinner {
+    margin: auto;
 }
