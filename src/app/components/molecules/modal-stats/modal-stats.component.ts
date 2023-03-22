@@ -13,8 +13,6 @@ export class ModalStatsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('Pokemon: ', this.pokemonData);
-    
   }
 
 }

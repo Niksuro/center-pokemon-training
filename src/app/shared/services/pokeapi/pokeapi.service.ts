@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '@environment/environment';
 import { HttpClient } from '@angular/common/http';
 import { PokeapiAll } from '@models/pokeapi/pokeapi-all.interface';
 import { PokeapiOne } from '@models/pokeapi/pokeapi-one.interface';
