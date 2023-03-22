@@ -11,31 +11,48 @@ import { PokeapiService } from '@services/pokeapi/pokeapi.service';
   styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
+  /**
+   * Receive the data to consult more info about a pokemon
+   */
   @Input() pokemonData!: Pokemon;
 
   constructor(
     private _pokeapiService: PokeapiService,
     public dialog: MatDialog
   ) {}
-
+  /**
+   * OnInit function
+   * Starts the component functions
+   */
   ngOnInit(): void {
-    this._pokeapiService
-      .getPokemon(this.pokemonData.name)
-      .subscribe((result: PokeapiOne) => {
-        this.pokemonData.image = result.sprites.front_default;
-        this.pokemonData.health = result.stats[0].base_stat;
-        this.pokemonData.attack = result.stats[1].base_stat;
-        this.pokemonData.defense = result.stats[2].base_stat;
-        this.pokemonData.specialAttack = result.stats[3].base_stat;
-        this.pokemonData.specialDefense = result.stats[4].base_stat;
-        this.pokemonData.speed = result.stats[5].base_stat;
-        this.pokemonData.type = [];
-        result.types.forEach((typePoke: TypePoke) => {
-          this.pokemonData.type.push(typePoke.type.name);
-        });
-      });
+    this.getPokemonData();
   }
-
+  /**
+   * getPokemonData function
+   * Using the name getted in pokemonData input, request more information
+   * about that pokemon.
+   */
+  getPokemonData() {
+    this._pokeapiService
+    .getPokemon(this.pokemonData.name)
+    .subscribe((result: PokeapiOne) => {
+      this.pokemonData.image = result.sprites.front_default;
+      this.pokemonData.health = result.stats[0].base_stat;
+      this.pokemonData.attack = result.stats[1].base_stat;
+      this.pokemonData.defense = result.stats[2].base_stat;
+      this.pokemonData.specialAttack = result.stats[3].base_stat;
+      this.pokemonData.specialDefense = result.stats[4].base_stat;
+      this.pokemonData.speed = result.stats[5].base_stat;
+      this.pokemonData.type = [];
+      result.types.forEach((typePoke: TypePoke) => {
+        this.pokemonData.type.push(typePoke.type.name);
+      });
+    });
+  }
+  /**
+   * Function that open a modal with more details about
+   * a pokemon.
+   */
   openModal(): void {
     const restore = this.dialog.open(ModalStatsComponent, {
       width: '55rem',
