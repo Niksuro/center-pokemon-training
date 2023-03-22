@@ -3,7 +3,9 @@
     aria-hidden="false"
     aria-label="Example home icon"
     fontIcon="home"
-  ></mat-icon>
+    class="close-icon-modal"
+    (click)="closeModal()"
+  >close</mat-icon>
   <h3 class="modal-title">{{ pokemonData.name }}</h3>
   <div class="pokemon-tag-modal">
     <app-tag-type *ngFor="let type of pokemonData.type" [text]=type></app-tag-type>

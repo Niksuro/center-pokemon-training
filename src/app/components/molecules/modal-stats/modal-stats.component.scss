@@ -9,6 +9,11 @@
     rgba(235, 48, 48, 1) 0%,
     rgba(237, 109, 109, 1) 100%
   );
+  display: flex;
+  flex-direction: column;
+}
+.close-icon-modal {
+  align-self: end;
 }
 .pokemon-tag-modal {
   display: flex;
