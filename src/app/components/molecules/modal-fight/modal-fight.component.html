@@ -1,0 +1,39 @@
+<div class="modal">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+      class="close-icon-modal"
+      (click)="closeModal()"
+    >close</mat-icon>
+    <h3 class="modal-title">{{winner}}</h3>
+    <mat-spinner class="modal-spinner" *ngIf="!winner"></mat-spinner>
+    <div class="modal-fight-table" *ngIf="winner">
+        <div class="modal-fight-pokemon">            
+            <img loading="lazy" src="{{firstPokemon.image}}" alt="{{firstPokemon.name}}" title="{{firstPokemon.name}}">
+            <h4>{{firstPokemon.name}}</h4>
+            <div class="pokemon-tag-modal">
+                <app-tag-type *ngFor="let type of firstPokemon.types" [text]=type></app-tag-type>
+            </div>
+            <div class="modal-logs">
+                <p *ngFor="let log of logFirstPokemon">{{log}}</p>
+                <h5>Total: {{damageFirst}}</h5>
+            </div>
+        </div>
+        <h4 class="modal-vs-tag">
+            VS
+        </h4>
+        <div class="modal-fight-pokemon">            
+            <img loading="lazy" src="{{secondPokemon.image}}" alt="{{secondPokemon.name}}" title="{{secondPokemon.name}}">
+            <h4>{{secondPokemon.name}}</h4>
+            <div class="pokemon-tag-modal">
+                <app-tag-type *ngFor="let type of secondPokemon.types" [text]=type></app-tag-type>
+            </div>
+            <div class="modal-logs">
+                <p *ngFor="let log of logSecondPokemon">{{log}}</p>
+                <h5>Total: {{damageSecond}}</h5>
+            </div>
+        </div>
+    </div>
+  </div>
+  

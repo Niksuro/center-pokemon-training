@@ -15,6 +15,7 @@ import { TagTypeComponent } from '@atoms/tag-type/tag-type.component';
 import { HeaderComponent } from '@molecules/header/header.component';
 import { FooterComponent } from '@molecules/footer/footer.component';
 import { ModalStatsComponent } from '@molecules/modal-stats/modal-stats.component';
+import { ModalFightComponent } from '@molecules/modal-fight/modal-fight.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ModalStatsComponent } from '@molecules/modal-stats/modal-stats.componen
     PokemonCardComponent,
     TagTypeComponent,
     ModalStatsComponent,
+    ModalFightComponent,
     HeaderComponent,
     FooterComponent,
   ],

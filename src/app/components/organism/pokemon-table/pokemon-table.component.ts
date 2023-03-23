@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { PokeapiAll } from '@models/pokeapi/pokeapi-all.interface';
 import { Pokemon } from '@models/pokemon/pokemon.interface';
+import { ModalFightComponent } from '@molecules/modal-fight/modal-fight.component';
 import { PokeapiService } from '@services/pokeapi/pokeapi.service';
 
 @Component({
@@ -25,7 +27,7 @@ export class PokemonTableComponent implements OnInit {
    * Store the pokemon data who are going to battle
    */
   public selectedForBattleList: Pokemon[];
-  constructor(private _pokeapiService: PokeapiService) {
+  constructor(private _pokeapiService: PokeapiService, public dialog: MatDialog) {
     this.pokemonList = [];
     this.selectedForBattleList = [];
     this.colorBackground = '#fc9f9f';
@@ -70,8 +72,18 @@ export class PokemonTableComponent implements OnInit {
   handlePokemonSelected(pokemon: Pokemon) {
     this.selectedForBattleList.push(pokemon);
   }
-
+  /**
+   * Function that open a modal with the fight results
+   * After that, resets the battleMode
+   */
   handlebuttonStartBattle() {
-    this.handleButtonBattleMode();
+    const dialogRef = this.dialog.open(ModalFightComponent, {
+      width: '65rem',
+      id: 'statsBox',
+      maxWidth: '90%',
+    });
+    dialogRef.componentInstance.firstPokemon = this.selectedForBattleList[0];
+    dialogRef.componentInstance.secondPokemon = this.selectedForBattleList[1];
+    dialogRef.afterClosed().subscribe(() => { this.handleButtonBattleMode(); })
   }
 }

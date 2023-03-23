@@ -9,17 +9,30 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from '@molecules/header/header.component';
 import { FooterComponent } from '@molecules/footer/footer.component';
 import { of } from 'rxjs';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PokemonTableComponent', () => {
   let component: PokemonTableComponent;
   let fixture: ComponentFixture<PokemonTableComponent>;
   let _pokeapiService: PokeapiService;
-
+  const dialogMock = {
+    close: () => {},
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PokemonTableComponent, HeaderComponent, FooterComponent],
-      imports: [HttpClientTestingModule, MatToolbarModule],
-      providers: [PokeapiService],
+      imports: [
+        HttpClientTestingModule,
+        MatToolbarModule,
+        MatDialogModule,
+        BrowserAnimationsModule,
+      ],
+      providers: [
+        { provide: MatDialogRef, useValue: dialogMock },
+        { provide: MAT_DIALOG_DATA, useValue: [] },
+        PokeapiService,
+      ],
     }).compileComponents();
   });
 
@@ -66,7 +79,7 @@ describe('PokemonTableComponent', () => {
       name: 'bulbasaur',
       id: 0,
       image: '',
-      type: [],
+      types: [],
       health: 0,
       attack: 0,
       defense: 0,

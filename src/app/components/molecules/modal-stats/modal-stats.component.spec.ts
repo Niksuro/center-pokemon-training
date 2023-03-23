@@ -32,7 +32,7 @@ describe('ModalStatsComponent', () => {
       name: '',
       id: 0,
       image: '',
-      type: [],
+      types: [],
       health: 0,
       attack: 0,
       defense: 0,

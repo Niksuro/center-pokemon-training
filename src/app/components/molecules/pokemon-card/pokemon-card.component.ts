@@ -71,9 +71,9 @@ export class PokemonCardComponent implements OnInit {
         this.pokemonData.specialAttack = result.stats[3].base_stat;
         this.pokemonData.specialDefense = result.stats[4].base_stat;
         this.pokemonData.speed = result.stats[5].base_stat;
-        this.pokemonData.type = [];
+        this.pokemonData.types = [];
         result.types.forEach((typePoke: TypePoke) => {
-          this.pokemonData.type.push(typePoke.type.name);
+          this.pokemonData.types.push(typePoke.type.name);
         });
       });
   }
