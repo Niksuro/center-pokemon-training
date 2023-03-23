@@ -1,0 +1,39 @@
+<div class="modal">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="home"
+    class="close-icon-modal"
+    (click)="closeModal()"
+    >close</mat-icon
+  >
+  <h3 class="modal-title">Hello!</h3>
+  <p>
+    And welcome to pokemon center of training and investigation. <br />
+    You can check the pokemon stats with only click over them! <br />
+    Or if you want to check the battle, follow the instructions.
+  </p>
+  <ul>
+    <li>
+      Inside the header, at the top-right (or just top if you are in mobile),
+      you can change into "Battle Mode" clicking that button, when this state is
+      activated, the background turns black and each click will select your
+      pokemon (You can see the label of ones are selected in the top screen!)
+    </li>
+  </ul>
+  <button mat-raised-button color="warn">Battle Mode</button>
+  <ul>    
+    <li>
+      Select two pokemons (even if the same two times!), this will be marked
+      with a yellow card.
+    </li>
+    <li>
+      After that, the VS button will be enable, click it and see the magic!
+    </li>
+  </ul>
+  <button mat-raised-button color="primary">
+    <p class="text-up-button">- VS -</p>
+    <p class="text-down-button">Start battle!</p>
+  </button>
+  <div class="modal-card"></div>
+</div>

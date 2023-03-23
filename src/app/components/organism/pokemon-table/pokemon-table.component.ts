@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PokeapiAll } from '@models/pokeapi/pokeapi-all.interface';
 import { Pokemon } from '@models/pokemon/pokemon.interface';
 import { ModalFightComponent } from '@molecules/modal-fight/modal-fight.component';
+import { ModalTutorialComponent } from '@molecules/modal-tutorial/modal-tutorial.component';
 import { PokeapiService } from '@services/pokeapi/pokeapi.service';
 
 @Component({
@@ -40,6 +41,17 @@ export class PokemonTableComponent implements OnInit {
    */
   ngOnInit(): void {
     this.getPokemonList();
+    this.handleStartTutorial();
+  }
+  /**
+   * Function that handle the apperture of tutorial modal
+   */
+  handleStartTutorial(){
+    const dialogRef = this.dialog.open(ModalTutorialComponent, {
+      width: '40rem',
+      id: 'statsBox',
+      maxWidth: '90%',
+    });
   }
   /**
    * getPokemonList function

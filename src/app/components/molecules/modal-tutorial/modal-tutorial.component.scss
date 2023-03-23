@@ -1,0 +1,46 @@
+::ng-deep mat-dialog-container {
+  background-color: white !important;
+  padding: 0.2rem !important;
+}
+.modal {
+  background: rgb(237, 109, 109);
+  background: linear-gradient(
+    0deg,
+    rgba(235, 48, 48, 1) 0%,
+    rgba(237, 109, 109, 1) 100%
+  );
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    margin: 1rem 0;
+    .text-up-button {
+      font-size: 2rem;
+      margin-bottom: -1rem;
+    }
+    .text-down-button {
+      font-size: 0.8rem;
+      margin-bottom: -0.5rem;
+    }
+  }
+  p {
+    margin: 0 1rem;
+  }
+}
+.close-icon-modal {
+  align-self: end;
+}
+
+.modal-title {
+  font-size: 5rem;
+  margin: 2rem 0;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-title {
+    font-size: 3rem;
+  }
+}
