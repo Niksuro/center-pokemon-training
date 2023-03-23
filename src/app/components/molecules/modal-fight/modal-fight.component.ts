@@ -44,11 +44,11 @@ export class ModalFightComponent implements OnInit {
   /**
    * Store the damage relation types from first pokemon
    */
-  private typeDamageFirstPokemon: TypeDamage[];
+  public typeDamageFirstPokemon: TypeDamage[];
   /**
    * Store the damage relation types from second pokemon
    */
-  private typeDamageSecondPokemon: TypeDamage[];
+  public typeDamageSecondPokemon: TypeDamage[];
   /**
    * Helper counter to check if all types were requested
    */

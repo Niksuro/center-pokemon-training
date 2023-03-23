@@ -5,7 +5,8 @@
   [secondPokemon]="selectedForBattleList.length > 1 ? selectedForBattleList[1].name : '---'"
   [selectedForBattle]="selectedForBattleList.length < 2"
 ></app-header>
-<div
+<main>
+  <div
   class="table-pokemon"
   [ngStyle]="{ background: colorBackground }"
   *ngIf="pokemonList.length > 0"
@@ -18,4 +19,5 @@
     (pokemonSelectedBattle)="handlePokemonSelected($event)"
   ></app-pokemon-card>
 </div>
+</main>
 <app-footer></app-footer>

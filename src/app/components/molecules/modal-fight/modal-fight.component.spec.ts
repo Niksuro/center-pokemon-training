@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokeapiService } from '@services/pokeapi/pokeapi.service';
+import { of } from 'rxjs';
 
 import { ModalFightComponent } from './modal-fight.component';
 
@@ -37,11 +38,12 @@ describe('ModalFightComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ModalFightComponent);
     component = fixture.componentInstance;
+    _pokeapiService = TestBed.get(PokeapiService);
     component.firstPokemon = {
       name: '',
       id: 0,
       image: '',
-      types: [],
+      types: ['grass'],
       health: 0,
       attack: 0,
       defense: 0,
@@ -53,7 +55,7 @@ describe('ModalFightComponent', () => {
       name: '',
       id: 0,
       image: '',
-      types: [],
+      types: ['fire'],
       health: 0,
       attack: 0,
       defense: 0,
@@ -66,5 +68,39 @@ describe('ModalFightComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should request the getTypeDamageRelation function, and get the damage types information', () => {
+    jest.spyOn(_pokeapiService, 'getTypeData').mockReturnValue(
+      of({
+        damage_relations: {
+          double_damage_from : [{name: 'fire', url: ''}],
+          double_damage_to: [{name: 'fire', url: ''}],
+          half_damage_from : [{name: 'fire', url:'' }],
+          half_damage_to: [{name: 'fire', url: ''}],
+          no_damage_from : [{name: 'fire', url: ''}],
+          no_damage_to: [{name: 'fire', url: ''}],
+      }
+      }
+    ));
+    component.getTypeDamageRelation();
+    expect(component.typeDamageFirstPokemon[0].doubleDamageFrom).toEqual(['fire']);
+  });
+
+  it('should request the getTypeDamageRelation function, and get the damage types information', () => {
+    jest.spyOn(_pokeapiService, 'getTypeData').mockReturnValue(
+      of({
+        damage_relations: {
+          double_damage_from : [{name: 'grass', url: ''}],
+          double_damage_to: [{name: 'grass', url: ''}],
+          half_damage_from : [{name: 'grass', url:'' }],
+          half_damage_to: [{name: 'grass', url: ''}],
+          no_damage_from : [{name: 'grass', url: ''}],
+          no_damage_to: [{name: 'grass', url: ''}],
+      }
+      }
+    ));
+    component.getTypeDamageRelation();
+    expect(component.typeDamageFirstPokemon[0].doubleDamageFrom).toEqual(['grass']);
   });
 });
