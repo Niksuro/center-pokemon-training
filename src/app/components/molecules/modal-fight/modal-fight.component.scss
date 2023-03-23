@@ -1,0 +1,100 @@
+::ng-deep mat-dialog-container {
+  background-color: white !important;
+  padding: 0.2rem !important;
+}
+.modal {
+  background: rgb(237, 109, 109);
+  background: linear-gradient(
+    0deg,
+    rgba(235, 48, 48, 1) 0%,
+    rgba(237, 109, 109, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+}
+.modal-spinner{
+  margin-left: auto;
+  margin-right: auto;
+}
+.close-icon-modal {
+  align-self: end;
+}
+.modal-vs-tag {
+  font-size: 5rem;
+  align-self: center;
+  opacity: 50%;
+}
+.modal-title {
+  font-size: 5rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+.modal-fight-table {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-fight-pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: capitalize;
+  flex: 0 1 50%;
+  img {
+    width: 50%;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+}
+.modal-logs{
+  h5{
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+.pokemon-tag-modal {
+  display: flex;
+  :nth-child(n) {
+    font-size: 1.5rem;
+    margin: 0 2rem 0rem 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal-title {
+    font-size: 2rem;
+    margin-top: 0;
+    line-height: 2rem;
+  }
+  .modal-fight-table {
+    flex-direction: column;
+  }
+  .modal-vs-tag {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  .modal-fight-pokemon {
+    img {
+      width: 30%;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
+  .modal-logs { 
+    h5{
+      font-size: 1rem;
+    }   
+    p{
+      font-size: .8rem !important;
+      margin: 0 !important;
+    }
+  }
+  .pokemon-tag-modal {
+    :nth-child(n) {
+      font-size: .8rem;
+      margin: 0 .5rem 0rem .5rem;
+    }
+  }
+}
